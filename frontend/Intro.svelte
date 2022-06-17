@@ -1,5 +1,5 @@
 <script lang="ts">
-  import logo from "./assets/logo-dark.svg"
+  import logo from "./assets/logo.svg"
   import { onMount } from "svelte"
   import { counter } from "canisters/counter"
 
