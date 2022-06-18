@@ -4,6 +4,7 @@
   import { counter } from "canisters/counter"
 
   let count: number = 0
+  let progress = false
 
   const refreshCounter = async () => {
     const res: any = await counter.getValue()
@@ -11,8 +12,10 @@
   }
 
   const increment = async () => {
+    progress = true
     await counter.increment()
     refreshCounter()
+    progress = false
   }
 
   onMount(refreshCounter)
@@ -72,9 +75,14 @@
     </div>
   </div>
  
+  {#if !progress}
   <button type="button" class="btn btn-primary my-8" on:click={increment}>
     Count is: {count}
   </button>
+  {/if}
+  {#if progress}
+  <progress class="progress progress-info w-56 my-18"></progress>
+  {/if}
   <p style="text-sm">
     This counter is running inside a canister
   </p>
