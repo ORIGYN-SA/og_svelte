@@ -10,6 +10,11 @@ import { getDefaultAgent } from "@dfinity/agent";
     console.log(result)
   }
 
+  const showNames = async () => {
+    const array_names : [Text] = await phonebook.get_names()
+    console.log(phonebook)
+  }
+
   let name =""
   let phone = ""
 
@@ -61,6 +66,11 @@ import { getDefaultAgent } from "@dfinity/agent";
       <div>
         <button on:click={showPhonebook} class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           Show Phonebook
+        </button>
+      </div>
+      <div>
+        <button on:click={showNames} class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Show Names
         </button>
       </div>
   </div>
