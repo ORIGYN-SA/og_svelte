@@ -11,15 +11,16 @@ actor {
   type Entry = {
     desc: Text;
     phone: Phone;
-    data: Int;
   };
 
   private var phonebook_entries : [(Text,Entry)] = [];
 
   let phonebook = Map.HashMap<Name, Entry>(0, Text.equal, Text.hash);
 
-  public func insert(name : Name, entry : Entry): async (){
+  public func insert(name : Name, entry : Entry): async Text{
     phonebook.put(name, entry);
+    var  message : Text = "Contact added";
+    return message;
   };
 
   public query func lookup(name : Name) : async ?Entry {
