@@ -4,9 +4,14 @@
       "main": "counter-canister/main.mo",
       "type": "motoko"
     },
+    "phonebook": {
+      "main": "phonebook-canister/main.mo",
+      "type": "motoko"
+    },
     "assets": {
       "dependencies": [
-        "counter"
+        "counter",
+        "phonebook"
       ],
       "frontend": {
         "entrypoint": "dist/index.html"

@@ -2,6 +2,8 @@
   import logo from "./assets/logo.svg"
   import { onMount } from "svelte"
   import { counter } from "canisters/counter"
+  
+  
 
   let count: number = 0
 
@@ -21,7 +23,7 @@
 <header class="mt-20 flex flex-col items-center justify-center text-lg">
   <img src={logo} style="height: 15vmin;" alt="logo" />
   
-  <p class="text-4xl my-8" >OG Svelte Starter</p>
+  <p class="text-4xl my-8" >OG Svelte Starter </p>
   <div class="flex text-left p-8 rounded-xl flex-col bg-slate-100">
     <div class="my-1">
       <code>npm run dev:</code>
@@ -38,8 +40,7 @@
     <hr />
     <div class="my-1">
       <code>dfx deploy:</code>
-      <span> Compiles & deploys your canisters</span>
-      
+      <span> Compiles & deploys your canisters</span>      
     </div>
     <div class="text-center text-base mt-8" >
       <a
