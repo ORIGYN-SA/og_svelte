@@ -1,9 +1,9 @@
-import { AuthClient } from "@dfinity/auth-client";
 import { idlFactory as origynIdlFactory } from "@/candid/origyn_nft_reference.did.js";
 import { idlFactory as ledgerIdlFactory } from "@/candid/ledger.did.js";
+import { getCanisterId } from "@/hooks/canister";
 
 const OGY_LEDGER_CANSITER = "jwcfb-hyaaa-aaaaj-aac4q-cai";
-const canisterId = "";
+const canisterId = getCanisterId();
 
 export const connectPlug = async () => {
   if (!(await window.ic.plug.isConnected())) {
@@ -30,7 +30,6 @@ export const connectPlug = async () => {
   });
 
   const plugPrincipal = await window.ic.plug.agent.getPrincipal();
-  window.localStorage.setItem("loggedIn", "plug");
 
   return {
     principal: plugPrincipal,
