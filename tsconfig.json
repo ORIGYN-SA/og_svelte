@@ -14,21 +14,25 @@
      * To have warnings / errors of the Svelte compiler at the
      * correct position, enable source maps by default.
      */
-    "sourceMap": true,
+    "sourceMap": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     /**
      * Typecheck JS in `.svelte` and `.js` files by default.
      * Disable checkJs if you'd like to use dynamic types in JS.
      * Note that setting allowJs false does not prevent the use
      * of JS in `.svelte` files.
      */
+    "outDir": "./dist",
     "allowJs": true,
     "checkJs": true,
     "types": ["vite/client"],
     "paths": {
+      "@/*": [
+        "frontend/*"
+      ],
       "canisters/counter": [".dfx/local/canisters/counter"]
     }
   },
@@ -43,29 +47,3 @@
     "frontend/**/*.svelte"
   ]
 }
-// {
-//   "extends": "@tsconfig/svelte/tsconfig.json",
-//   "compilerOptions": {
-//     "target": "esnext",
-//     "useDefineForClassFields": true,
-//     "module": "esnext",
-//     "resolveJsonModule": true,
-//     "baseUrl": ".",
-//     /**
-//      * Typecheck JS in `.svelte` and `.js` files by default.
-//      * Disable checkJs if you'd like to use dynamic types in JS.
-//      * Note that setting allowJs false does not prevent the use
-//      * of JS in `.svelte` files.
-//      */
-//     "allowJs": true,
-//     "checkJs": true,
-//     "isolatedModules": true
-//   },
-//   "include": [
-//     "frontend/**/*.d.ts",
-//     "frontend/**/*.ts",
-//     "frontend/**/*.js",
-//     "frontend/**/*.svelte"
-//   ],
-//   "references": [{ "path": "./tsconfig.node.json" }]
-// }
