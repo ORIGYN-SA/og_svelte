@@ -1,5 +1,9 @@
 # IC + Svelte + TS + Vite + Tailwind
 
+### Purpose
+
+This repo provides an origyn implementation of a svelte based IC web Dapp.
+
 This template should help get you started developing with Svelte and TypeScript in Vite.
 
 ## Recommended IDE Setup
